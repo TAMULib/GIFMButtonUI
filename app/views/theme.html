@@ -1,0 +1,36 @@
+<div class="view view-theme-manager col-xs-12" ng-controller="ThemeController">
+	<!-- ADMINS ONLY -->
+	<div ng-if="!isAdmin()" class="row" ng-include src="'views/restrictedAccess.html'" ></div>
+	<h2>Update Theme</h2>
+	<div class="col-md-4">
+		<div ng-repeat="theme in themes.list">
+			<form>
+				<h4>
+					{{theme.name}}
+					<span ng-if="theme.active">(Active)</span>
+					<a ng-if="theme.active && refreshable" href="#" ng-click="refreshPage()">(Refresh Page)</span>
+					<a ng-if="!theme.active" href="#" ng-click="activateTheme(theme.id)">(Activate)</a>
+				</h4>
+				<div class="input-group" ng-repeat="property in theme.properties">
+  					<span class="input-group-addon">
+						<label for="{{property.propertyName.name}}">{{property.propertyName.name}}</label>
+					</span>
+					<input class="form-control" type="text" name="{{property.propertyName.name}}" ng-model="property.value" />
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-default" ng-click="updateThemeProperty(theme,property.id,property.value)">Save</button>
+					</span>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="col-md-4 pull-right">
+		<form>
+			<div class="input-group">
+				<input class="form-control" type="text" name="new-theme-name" ng-model="newTheme.name" placeholder="Theme Name" />
+				<span class="input-group-btn">
+					<button type="button" class="btn btn-default" ng-click="addTheme(newTheme)">Add Theme</button>
+				</span>
+			</div>
+		</form>
+	</div>
+</div>

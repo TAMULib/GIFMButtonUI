@@ -1,0 +1,17 @@
+{
+  "name": "Catalog-UI",
+  "description": "An angular frontend for the Catalog Service",
+  "version": "0.0.1",
+  "homepage": "https://github.com/TAMULib/CatalogUI.git",
+  "license": "MIT",
+  "private": true,
+  "ignore": [],
+  "dependencies": {
+    "ng-table": "0.5.4",
+    "ng-csv": "0.3.2",
+    "core": "git@github.com:TAMULib/Weaver-UI-Core.git#master"
+  },
+  "resolutions": {
+    "angular": "1.4.x"
+  }
+}

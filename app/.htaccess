@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+    RewriteBase /weaver-ui-seed/
+
+
+    RewriteEngine on
+    RewriteCond %{HTTP:X-Requested-With} !XMLHttpRequest$
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule . index.html [L]
+</IfModule>
