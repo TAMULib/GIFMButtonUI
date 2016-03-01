@@ -58,7 +58,7 @@ module.exports = function(grunt) {
 				      	'!<%= build.app %>/bower_components/**/*',
 				      	'!<%= build.app %>/components/**/*',
 				      	'!<%= build.app %>/resources/**/*',
-				      	'!<%= build.app %>/resources/scripts/app_contact.js'
+				      	'!<%= build.app %>/resources/scripts/app_concat.js'
 				     ],
 				dest: '<%= build.app %>/resources/scripts/app_concat.js'
 			}
