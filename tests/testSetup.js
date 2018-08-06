@@ -1,3 +1,0 @@
-function setUpApp(bootstrapApp) {
-	bootstrapApp();
-}
