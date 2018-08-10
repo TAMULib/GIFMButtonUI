@@ -10,9 +10,11 @@
       <button type="button" class="btn btn-default" ng-click="closeModal()">Cancel</button>
       <button type="submit" class="btn btn-primary">Update</button>
     </div>
-    <div class="form-group" ng-repeat="(name, value) in activeButton" ng-if="name!='id'">
-      <label for="{{name}}">{{name}}</label>
-      <input name="{{name}}" ng-model="activeButton[name]" class="form-control" value="{{value}}" />
+    <div class="form-group" ng-repeat="(name, details) in fieldDetails" ng-if="name!='id'">
+      <label for="{{name}}">{{details.gloss}}</label>
+      <p ng-if="details.description" class="help-block">{{details.description}}</p>
+      <input ng-if="name!='linkTemplate'" name="{{name}}" ng-model="activeButton[name]" class="form-control" value="{{value}}" />
+      <textarea ng-if="name=='linkTemplate'" name="{{name}}" ng-model="activeButton[name]" class="form-control">{{value}}</textarea>
     </div>
   </div>
 </form>
