@@ -11,12 +11,13 @@
           <div class="title">{{button.linkText}}</div>
           <div class="content">
             <button class="btn btn-default btn-block" ng-click="viewButton(button);">View Configuration</button>
-            <button class="btn btn-default btn-block">Edit Configuration</button>
+            <button class="btn btn-default btn-block" ng-click="editButton(button);">Edit Configuration</button>
           </div>
         </div>
       </div>
     </div>
   </div>
   <modal modal-id="buttonViewModal" modal-view="views/modals/buttonViewModal.html" modal-header-class="modal-header-primary" modal-fullscreen="true" wvr-modal-backdrop="static"></modal>
+  <modal modal-id="buttonEditModal" modal-view="views/modals/buttonEditModal.html" modal-header-class="modal-header-primary" modal-fullscreen="true" wvr-modal-backdrop="static"></modal>
 </div>
 

@@ -8,8 +8,23 @@ app.controller('ButtonManagementController', function ($controller, $scope, Pers
 
     PersistedButtonRepo.ready().then(function() {
         $scope.viewButton = function(button) {
-            $scope.activeButton = button;
-            $scope.openModal("#buttonViewModal");
+            buttonAction(button,"buttonViewModal");
         };
+
+        $scope.editButton = function(button) {
+            buttonAction(button,"buttonEditModal");
+        };
+
+        var buttonAction = function(button, modalName) {
+            $scope.activeButton = button;
+            $scope.openModal("#"+modalName);
+        };
+
+        $scope.updateButton = function(button) {
+            PersistedButtonRepo.update(button).then(function() {
+                $scope.closeModal();
+            });
+        };
+
     });
 });
