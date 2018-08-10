@@ -1,46 +1,33 @@
 // CONVENTION: must match model name, case sensitive
 var apiMapping = {
-	Theme: {
+	PersistedButton: {
+		channel: '/channel/buttons',
 		all: {
 			'endpoint': '/private/queue',
-			'controller': 'theme',
+			'controller': 'button-management',
 			'method': 'all'
 		},
-		listen: {
-			'endpoint': '/channel',
-			'controller': 'theme'
+        create: {
+            'endpoint': '/private/queue',
+            'controller': 'button-management',
+            'method': 'create'
 		},
-		create: {
-			'endpoint': '/private/queue',
-			'controller': 'theme',
-			'method': 'add-theme'
+        update: {
+            'endpoint': '/private/queue',
+            'controller': 'button-management',
+            'method': 'update'
 		},
-		remove: {
-			'endpoint': '/private/queue',
-			'controller': 'theme',
-			'method': 'remove-theme'
+        remove: {
+            'endpoint': '/private/queue',
+            'controller': 'button-management',
+            'method': 'remove'
 		},
-		activate: {
-			'endpoint': '/private/queue',
-			'controller': 'theme',
-			'method': 'activate-theme'
-		},
-		update: {
-			'endpoint': '/private/queue',
-			'controller': 'theme',
-			'method': 'update'
-		},
-		updateThemeProperty: {
-			'endpoint': '/private/queue',
-			'controller': 'theme',
-			'method': 'update-property'
-		}
 	},
 	User: {
 		lazy: true,
 		instantiate: {
-			'endpoint': '/private/queue', 
-			'controller': 'user', 
+			'endpoint': '/private/queue',
+			'controller': 'user',
 			'method': 'credentials'
 		},
 		all: {

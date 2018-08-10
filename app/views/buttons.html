@@ -1,0 +1,22 @@
+<div class="row" ng-controller="ButtonManagementController">
+  <!-- ADMINS  ONLY -->
+  <div ng-if="!isAdmin()" class="row" ng-include src="'views/restrictedAccess.html'" ></div>
+  <div ng-if="isAdmin()" class="col-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Buttons</h3>
+      </div>
+      <div class="panel-body">
+        <div ng-repeat="button in buttons" class="card">
+          <div class="title">{{button.linkText}}</div>
+          <div class="content">
+            <button class="btn btn-default btn-block" ng-click="viewButton(button);">View Configuration</button>
+            <button class="btn btn-default btn-block">Edit Configuration</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <modal modal-id="buttonViewModal" modal-view="views/modals/buttonViewModal.html" modal-header-class="modal-header-primary" modal-fullscreen="true" wvr-modal-backdrop="static"></modal>
+</div>
+
