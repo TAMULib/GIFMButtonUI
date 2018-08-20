@@ -13,8 +13,9 @@
     <div class="form-group" ng-repeat="(name, details) in fieldDetails">
       <label for="{{name}}">{{details.gloss}}</label>
       <p ng-if="details.description" class="help-block">{{details.description}}</p>
-      <input ng-if="name!='linkTemplate'" name="{{name}}" ng-model="activeButton[name]" class="form-control" value="{{value}}" />
-      <textarea ng-if="name=='linkTemplate'" name="{{name}}" ng-model="activeButton[name]" class="form-control">{{value}}</textarea>
+      <input ng-if="name!='linkTemplate' && fieldDetails[name].type!='list'" name="{{name}}" ng-model="activeButton[name]" class="form-control" />
+      <input ng-if="name!='linkTemplate' && fieldDetails[name].type=='list'" name="{{name}}" ng-model="activeButton[name]" ng-list=";" class="form-control" />
+      <textarea ng-if="name=='linkTemplate'" name="{{name}}" ng-model="activeButton[name]" class="form-control"></textarea>
     </div>
   </div>
 </form>
