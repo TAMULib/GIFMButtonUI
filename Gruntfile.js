@@ -1,5 +1,5 @@
 module.exports = function (grunt) {
-  
+
 	// Configurable paths
 	var build = {
 			app: 'app',
@@ -56,18 +56,16 @@ module.exports = function (grunt) {
 
 									'node_modules/angular/angular.min.js',
 
-									'node_modules/angular-sanitize/angular-sanitize.min.js',
 									'node_modules/angular-route/angular-route.min.js',
 									'node_modules/angular-loader/angular-loader.min.js',
+									'node_modules/angular-sanitize/angular-sanitize.min.js',
 									'node_modules/angular-messages/angular-messages.min.js',
 									'node_modules/angular-mocks/angular-mocks.js',
 
-									'node_modules/ng-sortable/dist/ng-sortable.min.js',
-
-									'node_modules/ng-table/bundles/ng-table.min.js',
-
 									'node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js',
 									'node_modules/ng-file-upload/dist/ng-file-upload.min.js',
+
+									'node_modules/ng-table/bundles/ng-table.min.js',
 
 									'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'
 							],
@@ -102,7 +100,11 @@ module.exports = function (grunt) {
 									'node_modules/weaver-ui-core/app/directives/userDirective.js',
 									'node_modules/weaver-ui-core/app/directives/modalDirective.js',
 									'node_modules/weaver-ui-core/app/directives/alertDirective.js',
+									'node_modules/weaver-ui-core/app/directives/accordionDirective.js',
+									'node_modules/weaver-ui-core/app/directives/tabsDirective.js',
+									'node_modules/weaver-ui-core/app/directives/tooltipDirective.js',
 									'node_modules/weaver-ui-core/app/directives/validationMessageDirective.js',
+									'node_modules/weaver-ui-core/app/directives/validatedInputDirective.js',
 									'node_modules/weaver-ui-core/app/directives/validatedSelectDirective.js',
 									'node_modules/weaver-ui-core/app/directives/validatedTextAreaDirective.js',
 
@@ -110,7 +112,6 @@ module.exports = function (grunt) {
 									'node_modules/weaver-ui-core/app/services/wsService.js',
 									'node_modules/weaver-ui-core/app/services/wsApi.js',
 									'node_modules/weaver-ui-core/app/services/restApi.js',
-									'node_modules/weaver-ui-core/app/services/fileService.js',
 									'node_modules/weaver-ui-core/app/services/authService.js',
 									'node_modules/weaver-ui-core/app/services/storageService.js',
 									'node_modules/weaver-ui-core/app/services/utilityService.js',
@@ -143,8 +144,7 @@ module.exports = function (grunt) {
 									'!<%= build.app %>/config/appConfig.js',
 									'!<%= build.app %>/config/apiMapping.js',
 									'!<%= build.app %>/resources/**/*',
-									'!<%= build.app %>/components/**/*',
-									'!<%= build.app %>/node_modules/**/*'
+									'!<%= build.app %>/components/**/*'
 							],
 							dest: '<%= build.app %>/resources/scripts/app_concat.js'
 					},
