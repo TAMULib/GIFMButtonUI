@@ -1,5 +1,5 @@
 
-app.config(function($routeProvider) {	
+app.config(function($routeProvider) {
 	$routeProvider.
 		when('/register', {
 			templateUrl: 'bower_components/core/app/views/register.html'
@@ -8,20 +8,9 @@ app.config(function($routeProvider) {
 			templateUrl: 'views/users.html',
 			access: ["ROLE_ADMIN", "ROLE_MANGER"]
 		}).
-		when('/theme', {
-			templateUrl: 'views/theme.html',
-			access: ["ROLE_ADMIN"]
+		when('/home', {
+			redirectTo: '/'
 		}).
-		when('/directives', {
-			templateUrl: 'views/directive-demo/directives.html',
-			controller: 'DirectiveGalleryController',
-			reloadOnSearch: false
-		}).
-		when('/directives/:tab', {
-			templateUrl: 'views/directive-demo/directives.html',
-			controller: 'DirectiveGalleryController',
-			reloadOnSearch: false
-		}).		
 		when('/', {
 			templateUrl: 'views/home.html'
 		}).
