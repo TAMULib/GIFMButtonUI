@@ -201,3 +201,43 @@ main footer {
 .view-theme-manager .input-group-addon label {
   min-width: 100px;
 }
+
+.bottom-spacer {
+  margin-bottom: 20px;
+}
+
+.card {
+  display:inline-block;
+  width:31%;
+  border: 1px solid #dfdfdf;
+  border-radius:4px;
+  margin:8px 1%;
+  padding:8px;
+}
+
+.card > .title {
+  font-weight: bold;
+  text-align:center;
+  border-bottom:1px solid #dfdfdf;
+  padding-bottom: 6px;
+}
+
+.card > .content {
+  margin: 12px;
+}
+
+.card .btn {
+  border-color: #dfdfdf;
+}
+
+@media only screen and (max-width : 992px) {
+  .card {
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  .card {
+    width: 98%;
+  }
+}

@@ -14,7 +14,9 @@ app.config(function($routeProvider) {
 		when('/', {
 			templateUrl: 'views/home.html'
 		}).
-
+		when('/buttons', {
+			templateUrl: 'views/buttons.html'
+		}).
 
 		// Error Routes
 		when('/error/403', {
