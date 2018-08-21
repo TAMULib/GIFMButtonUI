@@ -49,18 +49,19 @@ app.controller('ButtonManagementController', function ($controller, $scope, Pers
         };
 
         $scope.createButton = function(button) {
-            console.log(button);
-            angular.forEach($scope.fieldDetails, function (details, key) {
+            PersistedButtonRepo.create(processButtonValues(button)).then(function() {
+                $scope.closeModal();
+            });
+        };
 
+        var processButtonValues = function(button) {
+            angular.forEach($scope.fieldDetails, function (details, key) {
                 if (details.type && details.type == 'list' && button[key]) {
                     var values = button[key];
                     button[key] = values.split(";");
                 }
             });
-
-            PersistedButtonRepo.create(button).then(function() {
-                $scope.closeModal();
-            });
+            return button;
         };
 
         $scope.confirmDeleteButton = function(button) {
