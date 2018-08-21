@@ -63,5 +63,15 @@ app.controller('ButtonManagementController', function ($controller, $scope, Pers
             });
         };
 
+        $scope.confirmDeleteButton = function(button) {
+            $scope.activeButton = button;
+            $scope.openModal("#buttonDeleteModal");
+        };
+
+        $scope.deleteButton = function(button) {
+            PersistedButtonRepo.delete(button).then(function() {
+                $scope.closeModal();
+            });
+        };
     });
 });
