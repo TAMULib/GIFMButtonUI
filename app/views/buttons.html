@@ -4,6 +4,9 @@
   <div ng-if="isAdmin()" class="col-12">
     <div class="panel panel-default">
       <div class="panel-heading">
+        <label class="checkbox-inline pull-right">
+          <button class="btn btn-xs btn-success" ng-click="addButton()">New Button</button>
+        </label>
         <h3 class="panel-title">Buttons</h3>
       </div>
       <div class="panel-body">
@@ -11,12 +14,14 @@
           <div class="title">{{button.linkText}}</div>
           <div class="content">
             <button class="btn btn-default btn-block" ng-click="viewButton(button);">View Configuration</button>
-            <button class="btn btn-default btn-block">Edit Configuration</button>
+            <button class="btn btn-default btn-block" ng-click="editButton(button);">Edit Configuration</button>
           </div>
         </div>
       </div>
     </div>
   </div>
   <modal modal-id="buttonViewModal" modal-view="views/modals/buttonViewModal.html" modal-header-class="modal-header-primary" modal-fullscreen="true" wvr-modal-backdrop="static"></modal>
+  <modal modal-id="buttonEditModal" modal-view="views/modals/buttonEditModal.html" modal-header-class="modal-header-primary" modal-fullscreen="true" wvr-modal-backdrop="static"></modal>
+  <modal modal-id="buttonAddModal" modal-view="views/modals/buttonAddModal.html" modal-header-class="modal-header-primary" modal-fullscreen="true" wvr-modal-backdrop="static"></modal>
 </div>
 
