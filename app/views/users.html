@@ -19,31 +19,19 @@
 							<th>LastName</th>
 							<th>Role</th>
 							<th>Change Role To</th>
-							<th ng-if="(isAdmin() || isManager())">Assignments</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="thisUser in userRepo.list track by thisUser.uin">
-							<td>{{thisUser.uin}}</td>
+						<tr ng-repeat="thisUser in users track by thisUser.username">
+							<td>{{thisUser.username}}</td>
 							<td>{{thisUser.email}}</td>
 							<td>{{thisUser.firstName}}</td>
 							<td>{{thisUser.lastName}}</td>
 							<td>{{thisUser.role}}</td>
 							<td>
-								<select ng-if="(isAdmin() || isManager())" ng-model="thisUser.role" ng-change="updateRole(thisUser.uin, thisUser.role)" class="form-control">
+								<select ng-if="(isAdmin() || isManager())" ng-model="thisUser.role" ng-change="updateRole(thisUser)" class="form-control">
 									<option ng-repeat="role in allowableRoles(thisUser.role)">{{role}}</option>
 								</select>
-							</td>
-							<td ng-if="(isAdmin() || isManager()) && (thisUser.role == 'ROLE_ANNOTATOR' || thisUser.role == 'ROLE_MANAGER')">
-								
-								<modal modal-id="{{thisUser.uin}}AssignmentsModal" 
-									   modal-view="views/modals/assignmentsModal.html"
-									   modal-btn-classes="btn btn-primary"
-									   modal-controller="DocumentController"
-									   modal-ng-click-function="setSelectedUser"
-									   modal-ng-click-param="{{thisUser}}"
-									   modal-header-class="modal-header-primary">View Assignments</modal>
-								
 							</td>
 						</tr>
 					</tbody>
