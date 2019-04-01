@@ -230,6 +230,14 @@ main footer {
   border-color: #dfdfdf;
 }
 
+.card-inactive {
+  background-color: #efefef;
+}
+
+.card-inactive .title {
+  color: #b2b2b2;
+}
+
 @media only screen and (max-width : 992px) {
   .card {
     width: 48%;
