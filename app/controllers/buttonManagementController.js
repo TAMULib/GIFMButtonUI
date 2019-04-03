@@ -9,6 +9,7 @@ app.controller('ButtonManagementController', function ($controller, $scope, Pers
     $scope.newButton = {};
 
     $scope.fieldDetails = {
+                            "name": {"gloss":"The internal name for this button."},
                             "linkText": {"gloss":"Link Text","description":"The text for the button."},
                             "sid": {"gloss": "SID Suffix","description": "Must not be empty."},
                             "templateParameterKeys":{"gloss":"Template Parameter Keys","description":"A semi-colon separated list of keys that will be used in the Link Template field below. These keys will be used to pull values from the item and/or holding to generate the unique, item specific button URL for a given item.","type":"list"},

@@ -11,7 +11,7 @@
       </div>
       <div class="panel-body">
         <div ng-repeat="button in buttons" class="card" ng-class="{'card-inactive':!button.active}">
-          <div class="title">{{button.linkText}}</div>
+          <div class="title">{{button.name}}</div>
           <div class="content">
             <button class="btn btn-default btn-block" ng-click="viewButton(button);">View Configuration</button>
             <button class="btn btn-default btn-block" ng-click="editButton(button);">Edit Configuration</button>
