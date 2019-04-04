@@ -83,5 +83,22 @@ app.controller('ButtonManagementController', function ($controller, $scope, Pers
         $scope.getToggleButtonText = function(button) {
             return (button.active) ? "Deactivate":"Activate";
         };
+
+        $scope.cloneExistingButton = function(sourceButton,destinationButtonName) {
+            angular.forEach($scope.fieldDetails, function(fieldDetail,k) {
+                if (sourceButton[k] != null && sourceButton[k] != "") {
+                    if (fieldDetail.type !== undefined && fieldDetail.type == 'list') {
+                        $scope[destinationButtonName][k] = sourceButton[k].join(";");
+                    } else {
+                        $scope[destinationButtonName][k] = sourceButton[k];
+                    }
+                }
+            });
+            $scope[destinationButtonName].name += " Clone";
+        };
+
+        $scope.resetFormModel = function(modelName) {
+            $scope[modelName] = {};
+        };
     });
 });

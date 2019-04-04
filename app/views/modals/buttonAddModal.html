@@ -1,6 +1,6 @@
-<form name="buttonEditForm" ng-submit="createButton(newButton)">
+<form name="buttonAddForm" ng-submit="createButton(newButton)">
   <div class="modal-header {{attr.modalHeaderClass}}">
-    <button type="button" class="close" ng-click="closeModal()" aria-label="Close">
+    <button type="button" class="close" ng-click="resetFormModel('newButton');closeModal()" aria-label="Close">
       <span class="modal-close" aria-hidden="true">&times;</span>
     </button>
     <h3 class="modal-title">New Button Configuration</h3>
@@ -9,6 +9,12 @@
     <div class="bottom-spacer">
       <button type="button" class="btn btn-default" ng-click="closeModal()">Cancel</button>
       <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+    <div class="form-group">
+      <label for="cloneSource">Clone from:</label>
+      <select ng-model="cloneSource" name="cloneSource" ng-options="button.name for button in buttons"></select>
+      <button type="button" class="btn btn-default" ng-click="cloneExistingButton(cloneSource,'newButton')">Clone</button>
+      <button type="button" class="btn btn-default" ng-click="resetFormModel('newButton')">Reset Form</button>
     </div>
     <div class="form-group" ng-repeat="(name, details) in fieldDetails">
       <label for="{{name}}">{{details.gloss}}</label>
