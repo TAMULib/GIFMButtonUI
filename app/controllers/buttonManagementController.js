@@ -9,8 +9,9 @@ app.controller('ButtonManagementController', function ($controller, $scope, Pers
     $scope.newButton = {};
 
     $scope.fieldDetails = {
+                            "name": {"gloss":"The internal name for this button."},
                             "linkText": {"gloss":"Link Text","description":"The text for the button."},
-                            "sid": {"gloss": "SID","description": "Must not be empty."},
+                            "sid": {"gloss": "SID Suffix","description": "Must not be empty."},
                             "templateParameterKeys":{"gloss":"Template Parameter Keys","description":"A semi-colon separated list of keys that will be used in the Link Template field below. These keys will be used to pull values from the item and/or holding to generate the unique, item specific button URL for a given item.","type":"list"},
                             "linkTemplate": {"gloss":"Link Template","description":"The template for the button's URL. Use bracket notation - {key} - to place Template Parameter Keys in the URL template."},
                             "cssClasses": {"gloss":"CSS Classes","description":"CSS class name(s), separated by spaces, that will be added to the html of the button. Optional."},
@@ -72,6 +73,32 @@ app.controller('ButtonManagementController', function ($controller, $scope, Pers
             PersistedButtonRepo.delete(button).then(function() {
                 $scope.closeModal();
             });
+        };
+
+        $scope.toggleButton = function(button) {
+            button.active = !button.active;
+            $scope.updateButton(button);
+        }
+
+        $scope.getToggleButtonText = function(button) {
+            return (button.active) ? "Deactivate":"Activate";
+        };
+
+        $scope.cloneExistingButton = function(sourceButton,destinationButtonName) {
+            angular.forEach($scope.fieldDetails, function(fieldDetail,k) {
+                if (sourceButton[k] != null && sourceButton[k] != "") {
+                    if (fieldDetail.type !== undefined && fieldDetail.type == 'list') {
+                        $scope[destinationButtonName][k] = sourceButton[k].join(";");
+                    } else {
+                        $scope[destinationButtonName][k] = sourceButton[k];
+                    }
+                }
+            });
+            $scope[destinationButtonName].name += " Clone";
+        };
+
+        $scope.resetFormModel = function(modelName) {
+            $scope[modelName] = {};
         };
     });
 });

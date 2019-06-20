@@ -2,7 +2,7 @@ var appConfig = {
 
 		'version': 'Catalog UI',
 
-		'allowAnonymous': true,
+		'allowAnonymous': false,
 
 		'anonymousRole': 'ROLE_ANONYMOUS',
 
