@@ -8,22 +8,36 @@ module.exports = function(config){
             'app/config/appConfig.js',
             'app/config/apiMapping.js',
 
-            'app/bower_components/jquery/dist/jquery.js',
-            'app/bower_components/angular/angular.js',
-            'app/bower_components/angular-mocks/angular-mocks.js',
-            'app/bower_components/angular-route/angular-route.js',
-            'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-            'app/bower_components/ng-table/dist/ng-table.min.js',
-            'app/bower_components/ng-csv/build/ng-csv.min.js',
-            'app/bower_components/angular-sanitize/angular-sanitize.min.js',
+            'app/node_modules/jquery/dist/jquery.js',
+            'node_modules/bootstrap/dist/js/bootstrap.min.js',
 
-            'app/bower_components/core/app/config/coreConfig.js',
+            'node_modules/sockjs-client/dist/sockjs.min.js',
+            'node_modules/stompjs/lib/stomp.min.js',
 
-            'app/bower_components/core/app/components/**/*.js',
+            'app/node_modules/angular/angular.js',
 
-            'app/bower_components/core/app/core.js',
+            'node_modules/angular-route/angular-route.min.js',
+            'node_modules/angular-loader/angular-loader.min.js',
+            'node_modules/angular-sanitize/angular-sanitize.min.js',
+            'node_modules/angular-messages/angular-messages.min.js',
+            'node_modules/angular-mocks/angular-mocks.js',
 
-            'app/bower_components/core/app/**/*.js',
+            'app/node_modules/ng-table/bundles/ng-table.min.js',
+
+            'node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js',
+            'node_modules/ng-file-upload/dist/ng-file-upload.min.js',
+
+            'node_modules/ng-table/bundles/ng-table.min.js',
+
+            'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
+
+            'app/node_modules/@wvr/core/app/config/coreConfig.js',
+
+            'app/node_modules/@wvr/core/app/components/**/*.js',
+
+            'app/node_modules/@wvr/core/app/core.js',
+
+            'app/node_modules/@wvr/core/app/**/*.js',
 
 
             'app/components/**/*.js',

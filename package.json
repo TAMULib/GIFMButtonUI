@@ -16,8 +16,8 @@
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor e2e-tests/protractor.conf.js",
     "stop": "wvr server --stop",
-    "start": "wvr server -b /cap --prod --uid magpie-webserver",
-    "start-dev": "wvr server -b /magpie --uid magpie-webserver"
+    "start": "wvr server -b /cap --prod --uid catalog-webserver",
+    "start-dev": "wvr server -b /catalog-ui --uid catalog-webserver"
   },
   "dependencies": {
     "ng-table": "3.0.1",
