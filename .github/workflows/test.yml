@@ -47,12 +47,4 @@ jobs:
         run: |
           npm run test
           node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
-          mv ./coverage/*/* ./coverage/ # move coverage data outside of the browser specific path.
-
-      - name: "To Coveralls Node (build ${{ github.action }}-${{ github.run_number }}-node)"
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.github_token }}
-          flag-name: ${{ github.action }}-${{ github.run_number }}-node
-          parallel: false
 
