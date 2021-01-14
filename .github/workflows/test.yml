@@ -1,0 +1,58 @@
+name: TAMULib Test Node
+
+on:
+  push:
+    branches:
+      - $default_branch
+      - sprint*-staging
+
+  pull_request:
+
+  workflow_dispatch:
+
+jobs:
+  coveralls:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "Cache Node Dependencies"
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-dependencies
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-cache-node-${{ hashFiles('**/package.json', '**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-cache-node-${{ hashFiles('**/package.json', '**/package-lock.json') }}
+
+      - name: "Setup Node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: 0.10
+
+      - name: "Install Node Dependencies"
+        run: npm install
+
+      - name: "Starting Service for Node"
+        run: |
+          export DISPLAY=:99.0
+          sh -e /etc/init.d/xvfb start
+          npm start > /dev/null &
+          npm run update-webdriver
+          sleep 1 # give server time to start
+
+      - name: "Running Tests for Node"
+
+        run: |
+          npm run test
+          node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
+          mv ./coverage/*/* ./coverage/ # move coverage data outside of the browser specific path.
+
+      - name: "To Coveralls Node (build ${{ github.action }}-${{ github.run_number }}-node)"
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.github_token }}
+          flag-name: ${{ github.action }}-${{ github.run_number }}-node
+          parallel: false
+
