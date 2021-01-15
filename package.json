@@ -10,7 +10,7 @@
     "postinstall": "grunt",
     "pretest": "npm install",
     "test": "karma start karma.conf.js --browsers=ChromeHeadless --no-sandbox",
-    "test-single-run": "karma start karma.conf.js  --single-run --browsers=ChromeHeadless --no-sandbox",
+    "test-single-run": "karma start karma.conf.js  --single-run --reporters=dots --browsers=ChromeHeadless --no-sandbox",
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
     "preprotractor": "npm run update-webdriver",

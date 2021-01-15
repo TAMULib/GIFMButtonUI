@@ -42,6 +42,6 @@ jobs:
 
       - name: "Running Tests for Node"
         run: |
-          node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=ChromeHeadlessNoSandbox
-          node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
+          npm run test-single-run
+          npm run protractor
 
