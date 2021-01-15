@@ -1,4 +1,4 @@
-![Test](https://github.com/TAMULib/GIFMButtonUI/workflows/Test/badge.svg)
+![Build](https://github.com/TAMULib/GIFMButtonUI/workflows/Build/badge.svg)
 
 # GIFMButtonUI
 An angular frontend for the GIFM Button Service.
