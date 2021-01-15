@@ -44,5 +44,6 @@ jobs:
         run: |
           npm run postinstall
           npm run test-single-run
+          npm run preprotractor
           npm run protractor
 
