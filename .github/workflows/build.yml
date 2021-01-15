@@ -32,7 +32,7 @@ jobs:
       - name: "Node Tests"
         run: |
           npm run test-ci
-          grunt coverage
+          grunt coverage --force
 
       - name: "Send to Coveralls (build node-${{ github.run_number }})"
         uses: coverallsapp/github-action@master
