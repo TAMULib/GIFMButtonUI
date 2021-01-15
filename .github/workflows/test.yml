@@ -42,7 +42,7 @@ jobs:
 
       - name: "Running Tests for Node"
         run: |
-          node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
+          node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=ChromeHeadlessNoSandbox
           node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
 
       # - name: "To Coveralls Node (build ui-${{ github.action }}-${{ github.run_number }}-node)"
