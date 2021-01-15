@@ -30,7 +30,9 @@ jobs:
         run: npm install
 
       - name: "Node Tests"
-        run: npm run test-ci
+        run: |
+          npm run test-ci
+          ls ./coverage/
 
       - name: "Send to Coveralls (build node-${{ github.run_number }})"
         uses: coverallsapp/github-action@master
