@@ -1,18 +1,18 @@
 logs/*
 !.gitkeep
-dist/
-node_modules/
-bower_components/
+dist
+node_modules
+bower_components
 tmp
-.tmp/
+.tmp
 .project
 .DS_Store
 .idea
 npm-debug.log
-.sass-cache/
-# app/config/appConfig.js
+.sass-cache
+app/config/appConfig.js
 app/resources/styles/*
-!app/resources/styles/sass/
+!app/resources/styles/sass
 app/resources/scripts/*
-!app/resources/scripts/vendor/
-app/node_modules/
+!app/resources/scripts/vendor
+app/node_modules
