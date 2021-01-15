@@ -1,6 +1,11 @@
 module.exports = function(config){
     config.set({
 
+        preprocessors: {
+            "app/!(node_modules)/**/*.js": "coverage"
+        },
+          reporters: ["progress", "coverage"],
+
         basePath : './',
 
         files : [
@@ -73,6 +78,7 @@ module.exports = function(config){
 
         plugins : [
             'karma-chrome-launcher',
+            "karma-coverage",
             'karma-firefox-launcher',
             'karma-jasmine',
             'karma-junit-reporter'
@@ -81,6 +87,11 @@ module.exports = function(config){
         junitReporter : {
             outputFile: 'test_out/unit.xml',
             suite: 'unit'
+        },
+
+        coverageReporter: {
+            type: "lcov",
+            dir: "coverage/"
         }
 
     });

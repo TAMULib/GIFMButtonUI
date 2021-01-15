@@ -16,3 +16,4 @@ app/resources/styles/*
 app/resources/scripts/*
 !app/resources/scripts/vendor
 app/node_modules
+coverage
