@@ -1,7 +1,6 @@
 
-app.config(function($routeProvider, $locationProvider) {
+app.config(function($routeProvider) {
 
-	$locationProvider.html5Mode({enabled: true,requireBase: false});
 	$routeProvider.
 		when('/register', {
 			templateUrl: 'bower_components/core/app/views/register.html'
