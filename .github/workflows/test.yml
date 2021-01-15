@@ -20,11 +20,11 @@ jobs:
       - name: "Cache Node Dependencies"
         uses: actions/cache@v2
         env:
-          cache-name: cache-node-dependencies
+          cache-name: ui-cache-node-dependencies
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-cache-node-${{ hashFiles('**/package.json', '**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-cache-node-${{ hashFiles('**/package.json', '**/package-lock.json') }}
+          key: ${{ runner.os }}-ui-cache-node-${{ hashFiles('**/package.json', '**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-ui-cache-node-${{ hashFiles('**/package.json', '**/package-lock.json') }}
 
       - name: "Setup Node"
         uses: actions/setup-node@v2
@@ -36,16 +36,21 @@ jobs:
 
       - name: "Starting Service for Node"
         run: |
+          export DISPLAY=:99.0
+          sh -e /etc/init.d/xvfb start
           npm start > /dev/null &
           npm run update-webdriver
           sleep 1 # give server time to start
 
       - name: "Running Tests for Node"
-
         run: |
-          npm run test
-          #node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=chromeheadlessnosandbox
+          node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
+          node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
 
-
-
-
+      # - name: "To Coveralls Node (build ui-${{ github.action }}-${{ github.run_number }}-node)"
+      #   uses: coverallsapp/github-action@master
+      #   with:
+      #     github-token: ${{ secrets.github_token }}
+      #     flag-name: ui-${{ github.action }}-${{ github.run_number }}-node
+      #     parallel: false
+      #     path-to-lcov: './coverage/lcov.info'
