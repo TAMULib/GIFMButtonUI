@@ -79,7 +79,7 @@ app.controller('ButtonManagementController', function ($controller, $scope, Pers
         $scope.toggleButton = function(button) {
             button.active = !button.active;
             $scope.updateButton(button);
-        }
+        };
 
         $scope.getToggleButtonText = function(button) {
             return (button.active) ? "Deactivate":"Activate";

@@ -1,6 +1,6 @@
 var appConfig = {
 
-		'version': 'Catalog UI',
+		'version': 'GIFMButton UI',
 
 		'allowAnonymous': false,
 
