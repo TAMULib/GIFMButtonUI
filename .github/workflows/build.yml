@@ -36,15 +36,9 @@ jobs:
           sleep 1 # give server time to start
 
       - name: "Node Tests"
-        run: |
-          npm run test-ci
-          grunt coverage --force
-          mv ./coverage/*/* ./coverage/ # move coverage data outside of the browser specific path.
+        run: npm run test-ci
 
-      - name: "Send to Coveralls (build node-${{ github.run_number }})"
-        uses: MikeEdgar/github-action@raw_coverage_file
-        with:
-         github-token: ${{ secrets.github_token }}
-         path-to-file: './coverage/coveralls.json'
+
+
 
 
