@@ -2,7 +2,8 @@ module.exports = function(config){
     config.set({
 
         preprocessors: {
-            "app/!(node_modules)/**/*.js": "coverage"
+            "app/!(node_modules)/**/*.js": "coverage",
+            '**/*.html': ['ng-html2js']
         },
           reporters: ["progress", "coverage"],
 
@@ -81,7 +82,8 @@ module.exports = function(config){
             "karma-coverage",
             'karma-firefox-launcher',
             'karma-jasmine',
-            'karma-junit-reporter'
+            'karma-junit-reporter',
+            'karma-ng-html2js-preprocessor'
             ],
 
         junitReporter : {
