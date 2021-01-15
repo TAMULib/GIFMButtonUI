@@ -1,4 +1,4 @@
-name: TAMULib Test Node
+name: Test
 
 on:
   push:
@@ -42,6 +42,7 @@ jobs:
 
       - name: "Running Tests for Node"
         run: |
+          npm run postinstall
           npm run test-single-run
           npm run protractor
 
