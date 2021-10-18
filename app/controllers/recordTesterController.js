@@ -2,10 +2,18 @@ app.controller('RecordTesterController', function ($controller, $scope, $q, WsAp
   $scope.requestInfo = {catalogName:'evans',recordId:''};
   $scope.buttons = {};
   $scope.showSkipped = false;
+  $scope.loadingButtons = false;
+  $scope.loadingError = false;
 
   $scope.analyze = function() {
+    $scope.loadingError = false;
+    $scope.loadingButtons = true;
     getButtons($scope.requestInfo.catalogName, $scope.requestInfo.recordId).then(function(buttons) {
       $scope.buttons = buttons;
+    }).catch(function (e) {
+      $scope.loadingError = true;
+    }).finally(function() {
+      $scope.loadingButtons = false;
     });
   };
 
