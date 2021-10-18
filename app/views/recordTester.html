@@ -1,0 +1,67 @@
+<div class="row" ng-controller="RecordTesterController">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Record Tester</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-heading">Record ID</div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <label for="catalogName">Catalog</label>
+                    <select name="catalogName" class="form-control" ng-model="requestInfo.catalogName">
+                      <option>evans</option>
+                      <option>msl</option>
+                      <option>folio</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="recordId">Record ID</label>
+                    <input type="input" class="form-control" id="recordId" placeholder="Record ID" ng-model="requestInfo.recordId">
+                  </div>
+                  <button ng-click="analyze()" type="submit" class="btn btn-default">Test Record</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                  Button Analysis
+                  <div class="pull-right">
+                    <span>Show skipped buttons (hover for analysis): </span>
+                    <div class="radio-inline">
+                      <label>
+                        <input ng-model="showSkipped" type="radio" name="showSkipped" ng-value="false">
+                        No
+                      </label>
+                    </div>
+                    <div class="radio-inline">
+                      <label>
+                        <input ng-model="showSkipped" type="radio" name="showSkipped" ng-value="true">
+                        Yes
+                      </label>
+                    </div>
+                  </div>
+              </div>
+              <div class="panel-body">
+                <div ng-show="buttons" ng-repeat="(holding, buttonsResult) in buttons">
+                  <h4>{{holding}}</h4>
+                  <div class="buttons">
+                    <div class="get-it">
+                      <a ng-show="showSkipped || button.analysis=='valid'" ng-repeat="button in buttonsResult.buttons" ng-class="{skip: button.analysis!='valid'}" title="{{button.analysis}}" target="_blank" class="{{button.cssClasses}}" href="{{button.linkHref}}">{{button.linkText}}</a>
+                    </div>
+                  </div>
+                 </div>
+              </div>
+            </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

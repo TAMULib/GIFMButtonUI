@@ -17,6 +17,9 @@ app.config(function($routeProvider) {
 		when('/buttons', {
 			templateUrl: 'views/buttons.html'
 		}).
+		when('/record-tester', {
+			templateUrl: 'views/recordTester.html'
+		}).
 
 		// Error Routes
 		when('/error/403', {
