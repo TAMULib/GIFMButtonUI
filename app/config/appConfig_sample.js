@@ -1,6 +1,6 @@
 var appConfig = {
 
-		'version': 'GIFMButton UI',
+		'version': '2.1.0',
 
 		'allowAnonymous': false,
 

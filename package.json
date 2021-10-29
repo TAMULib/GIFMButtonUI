@@ -1,9 +1,9 @@
 {
-  "name": "catalog-ui",
+  "name": "get-it",
   "private": true,
-  "version": "2.0.4",
-  "description": "An angular frontend for the Catalog Service",
-  "repository": "https://github.com/TAMULib/CatalogUI.git",
+  "version": "2.1.0",
+  "description": "An angular frontend for the GIFM Button Service",
+  "repository": "https://github.com/TAMULib/GIFMButtonUI.git",
   "license": "MIT",
   "scripts": {
     "prestart": "npm install -g grunt-cli",
@@ -18,8 +18,8 @@
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor e2e/protractor.conf.js",
     "stop": "wvr server --stop",
-    "start": "wvr server -b /cap --prod --uid catalog-webserver",
-    "start-dev": "wvr server -b /catalog-ui --uid catalog-webserver"
+    "start": "wvr server -b /get-it --prod --uid getit-webserver",
+    "start-dev": "wvr server -b /get-it --uid getit-webserver"
   },
   "dependencies": {
     "@wvr/core": "2.0.7",
