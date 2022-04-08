@@ -20,6 +20,8 @@
 
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 
+	<link rel="stylesheet" type="text/css" href="https://labs.library.tamu.edu/tl-components/2x/styles.css">
+
 	<!-- Change this to the domain of your webservice -->
 	<link rel="stylesheet" type='text/css' href="resources/styles/app.css">
 
@@ -34,7 +36,7 @@
 	<!-- Content placed here will appear on every page -->
 	<main>
 
-		<tamuheader title="GIFM Button UI"></tamuheader>
+		<tl-header page-title="GIFM Button UI"></tl-header>
 
 		<alerts types="WARNING, ERROR"></alerts>
 		<alerts seconds="45" channels="auth/register" types="SUCCESS"></alerts>
@@ -96,7 +98,8 @@
 		</div>
 	</main>
 
-	<tamufooter></tamufooter>
+	<tl-footer></tl-footer>
+	<tl-themes active-theme="tamu"></tl-themes>
 
 	<!-- build:js resources/scripts/bundle.js -->
 
@@ -232,6 +235,8 @@
 	<script src="controllers/recordTesterController.js"></script>
 
 	<!-- endbuild -->
+
+	<script src="https://labs.library.tamu.edu/tl-components/2x/tl-components.js"></script>
 
 
 	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
