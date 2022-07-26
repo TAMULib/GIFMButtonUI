@@ -11,13 +11,6 @@ module.exports = function(config){
         basePath : './',
 
         files : [
-
-            'dist/appConfig.js',
-            'dist/app.bundle.js',
-
-            'tests/mocks/**/*.js',
-            'tests/unit/**/*.js'
-
         ],
 
         autoWatch : true,
