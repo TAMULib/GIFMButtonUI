@@ -15,6 +15,8 @@ module.exports = function(config){
 
         autoWatch : true,
 
+        failOnEmptyTestSuite: false,
+
         frameworks: ['jasmine'],
 
         browsers: ["ChromeHeadless"],
