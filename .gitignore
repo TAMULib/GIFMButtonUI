@@ -10,10 +10,8 @@ tmp
 .idea
 npm-debug.log
 .sass-cache
-app/config/appConfig.js
-app/resources/styles/*
-!app/resources/styles/sass
-app/resources/scripts/*
-!app/resources/scripts/vendor
-app/node_modules
 coverage
+
+package-lock.json
+
+.npmrc
