@@ -78,6 +78,7 @@ ENV GOOGLE_ANALYTICS UA-XXXXX-X
 
 ENV AUTH_SERVICE_URL http://localhost:9001/auth
 ENV WEB_SERVICE_URL http://localhost:9001
+ENV COMPONENTS_URL https://labs.library.tamu.edu/tl-components/2x
 
 EXPOSE 80
 
