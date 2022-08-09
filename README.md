@@ -35,6 +35,6 @@ Any questions concerning GIFM Button UI can be directed to [helpdesk@library.tam
 [coverage-badge]: https://coveralls.io/repos/github/TAMULib/GIFMButtonUI/badge.svg
 [tamu-library]: http://library.tamu.edu
 [app-repo]: https://github.com/TAMULib/GIFMButton
-[deployment-guide]: https://github.com/TAMULib/GIFMButtonUI/main/blob/main/DEPLOYING.md
-[contributors-docs]: https://github.com/TAMULib/GIFMButtonUI/blob/main/CONTRIBUTING.md
+[deployment-guide]: DEPLOYING.md
+[contributors-docs]: CONTRIBUTING.md
 [helpdesk-email]: mailto:helpdesk@library.tamu.edu
