@@ -1,38 +1,38 @@
 var appConfig = {
 
-    'version': '2.1.0',
+  'allowAnonymous': false,
 
-    'allowAnonymous': false,
+  'anonymousRole': 'ROLE_ANONYMOUS',
 
-    'anonymousRole': 'ROLE_ANONYMOUS',
+  // Set 'authService' to the webService if mocking AuthService
+  'authService': '${AUTH_SERVICE_URL}',
+  'webService': '${WEB_SERVICE_URL}',
 
-    // Set this to the webService if mocking AuthService
+  'basePath': '${BASE_PATH}',
 
-    'authService': '${AUTH_SERVICE_URL}',
-    'webService': '${WEB_SERVICE_URL}',
+  'stompDebug': ${STOMP_DEBUG},
 
-    'storageType': 'session',
+  'storageType': 'session',
 
-    'logging': {
-      'log': true,
-      'info': true,
-      'warn': true,
-      'error': true,
-      'debug': true
-    },
+  'logging': {
+    'log': true,
+    'info': true,
+    'warn': true,
+    'error': true,
+    'debug': true
+  },
 
-    'stompDebug': ${STOMP_DEBUG},
+  /**
+   * Determines the type of connection stomp will attempt to make with the service.
+   * TYPES:  websocket, xhr-streaming, xdr-streaming, eventsource, iframe-eventsource,
+   *         htmlfile, iframe-htmlfile, xhr-polling, xdr-polling, iframe-xhr-polling,
+   *         jsonp-polling
+   */
+  'sockJsConnectionType': ['websocket', 'xhr-streaming', 'xhr-polling', 'xdr-streaming', 'xdr-polling', 'iframe-eventsource',  'iframe-htmlfile', 'jsonp-polling'],
 
-    /*
-    Determines the type of connection stomp will attempt to make with the service.
-    TYPES:  websocket, xhr-streaming, xdr-streaming, eventsource, iframe-eventsource,
-        htmlfile, iframe-htmlfile, xhr-polling, xdr-polling, iframe-xhr-polling,
-        jsonp-polling
-    */
-    'sockJsConnectionType': ['websocket', 'xhr-streaming', 'xhr-polling', 'xdr-streaming', 'xdr-polling', 'iframe-eventsource',  'iframe-htmlfile', 'jsonp-polling'],
-
-    // Set this to 'admin' or 'user' if using mock AuthService
-    // otherwise set to null or false
-
-    'mockRole': null
+  /**
+   * Set this to 'admin' or 'user' if using mock AuthService
+   * otherwise set to null or false
+   */
+  'mockRole': null,
 };
