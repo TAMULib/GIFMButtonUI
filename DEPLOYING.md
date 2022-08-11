@@ -27,9 +27,9 @@ docker run -it project
 ```
 
 <sub>_* Note: `-t project` and `-it project` may be changed to another tag name as desired, such as `-t developing_on_this` and `-it developing_on_this`._</sub><br>
-<sub>_** Note: An additional step may be required, such as deploying along side a! [Weaver UI Core][weaver-ui] instance using [Verdaccio][verdaccio]._</sub>
+<sub>_** Note: An additional step may be required, such as deploying alongside a [Weaver UI Core][weaver-ui] instance using [Verdaccio][verdaccio]._</sub>
 
-To deploy along side a [Weaver UI Core][weaver-ui] instance using [Verdaccio][verdaccio], do the following *before* deploying:
+To deploy alongside a [Weaver UI Core][weaver-ui] instance using [Verdaccio][verdaccio], do the following *before* deploying:
 
 ```shell
 cd Weaver-UI-Core
