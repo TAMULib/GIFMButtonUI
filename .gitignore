@@ -1,18 +1,20 @@
+# Git
+!.gitkeep
+
+# OS / Editor Specific
+.DS_Store
+tmp/
 .tmp/
-.sass-cache/
 .idea/
 .project/
 
-.DS_Store
+# Node / NPM
 .npmrc
-
-!.gitkeep
-
 logs/
-tmp/
 coverage/
-dist/
 node_modules/
-
 npm-debug.log
 package-lock.json
+
+# Weaver
+dist/
