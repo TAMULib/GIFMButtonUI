@@ -6,6 +6,7 @@ Involvement in GIFM Button UI can take many forms:
 
 <div align="right">(<a href="#readme-top">back to top</a>)</div>
 
+
 ## Using
 
 Deploying GIFM Button UI and trying it out at your own institution is itself a way of contributing to the development process.
@@ -14,6 +15,7 @@ For more information on deployment strategies please see the [Deployment Guide][
 [deployment-guide]: DEPLOYING.md
 
 <div align="right">(<a href="#readme-top">back to top</a>)</div>
+
 
 ## Filing Issues
 
@@ -29,6 +31,7 @@ A **Bug Report** involves a problem with the existing software or a **Feature** 
 A **Feature** involves new functionality or behavior.
 
 <div align="right">(<a href="#readme-top">back to top</a>)</div>
+
 
 ## Creating a Pull Request
 
@@ -50,14 +53,15 @@ In general keep in mind:
 
 <div align="right">(<a href="#readme-top">back to top</a>)</div>
 
+
 ## Good Luck!
 
 We look forward to seeing your contributions.
-If you have any additional questions please contact the GIFM Button UI developers at [helpdesk@library.tamu.edu][helpdesk-email].
+If you have any additional questions please contact the GIFM Button UI developers at helpdesk@library.tamu.edu.
 
 <div align="right">(<a href="#readme-top">back to top</a>)</div>
+
 
 <!-- LINKS -->
 [deployment-guide]: DEPLOYING.md
 [semantic-versioning]: https://semver.org/
-[helpdesk-email]: mailto:helpdesk@library.tamu.edu

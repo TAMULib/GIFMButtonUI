@@ -8,6 +8,7 @@ An Angular UI frontend for the GIFM Button Service developed and maintained by [
 
 <div align="right">(<a href="#readme-top">back to top</a>)</div>
 
+
 ## Deployment
 
 For a quick and easy deployment using `docker-compose` consider using the [GIFM Button App][app-repo].
@@ -24,7 +25,9 @@ This process is further described in the [Deployment Guide][deployment-guide].
 
 Please feel free to file any issues concerning GIFM Button UI to the issues section of the repository.
 
-Any questions concerning GIFM Button UI can be directed to [helpdesk@library.tamu.edu][helpdesk-email].
+Any questions concerning GIFM Button UI can be directed to helpdesk@library.tamu.edu.
+
+Copyright © 2022 Texas A&M University Libraries under the [The MIT License][license].
 
 <div align="right">(<a href="#readme-top">back to top</a>)</div>
 
@@ -33,8 +36,10 @@ Any questions concerning GIFM Button UI can be directed to [helpdesk@library.tam
 [build-badge]: https://github.com/TAMULib/GIFMButtonUI/workflows/Build/badge.svg
 [coverage-status]: https://coveralls.io/github/TAMULib/GIFMButtonUI
 [coverage-badge]: https://coveralls.io/repos/github/TAMULib/GIFMButtonUI/badge.svg
+
 [tamu-library]: http://library.tamu.edu
 [app-repo]: https://github.com/TAMULib/GIFMButton
+
 [deployment-guide]: DEPLOYING.md
 [contribute-guide]: CONTRIBUTING.md
-[helpdesk-email]: mailto:helpdesk@library.tamu.edu
+[license]: LICENSE
