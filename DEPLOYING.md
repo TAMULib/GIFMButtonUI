@@ -1,13 +1,13 @@
 <a name="readme-top"></a>
-# GIFM Button UI Deployment Guide
+# Get It For Me Button UI Deployment Guide
 
 ## Production Deployments
 
-For **production** deployments, deploy using `docker-compose` via the [GIFM Button App][app-repo].
+For **production** deployments, deploy using `docker-compose` via the [GIFM Button App Repo][app-repo].
 This is the recommended method of deployment for production systems.
-Go to the [GIFM Button App][app-repo] and following the deployment instructions there.
+Go to the [GIFM Button App Repo][app-repo] and following the deployment instructions there.
 
-Performing the deployment using the [GIFM Button App][app-repo] should be something similar to the following:
+Performing the deployment using the [GIFM Button App Repo][app-repo] should be something similar to the following:
 ```shell
 docker-compose up
 ```
@@ -59,7 +59,7 @@ Those steps are a great way to start but they also fail to explain the customiza
 There are multiple ways to further configure this for deployment to better meet the desired requirements.
 
 It is highly recommended only to perform *manual installation* when developing.
-For production deployment, please use `docker-compose` via the [GIFM Button App][app-repo] or use the **Docker** method above.
+For production deployment, please use `docker-compose` via the [GIFM Button App Repo][app-repo] or use the **Docker** method above.
 
 <div align="right">(<a href="#readme-top">back to top</a>)</div>
 
@@ -107,7 +107,7 @@ The `.wvr/build-config.js` file has only a single section of interest and might 
 In the above example snippet, only the lines containing `'${STOMP_DEBUG}'`, `'${AUTH_SERVICE_URL}'`, and `'${WEB_SERVICE_URL}'` should be changed.
 For example `'http://localhost:9001/products'` could be changed to `'http://localhost:8181/products'` (changing the port number from 9001 to 8181).
 
-Once this is done all of the steps from Deploy Directly using **NPM** above can be followed.
+Once this is done all of the steps from *Development Deployment using NPM* above can be followed.
 
 <div align="right">(<a href="#readme-top">back to top</a>)</div>
 

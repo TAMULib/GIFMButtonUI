@@ -2,16 +2,16 @@
 [![Build Status][build-badge]][build-status]
 [![Coverage Status][coverage-badge]][coverage-status]
 
-# GIFM Button UI
+# Get It For Me Button UI
 
-An Angular UI frontend for the GIFM Button Service developed and maintained by [Texas A&M University Libraries][tamu-library].
+An Angular UI frontend for the *Get It For Me (GIFM) Button Service* developed and maintained by [Texas A&M University Libraries][tamu-library].
 
 <div align="right">(<a href="#readme-top">back to top</a>)</div>
 
 
 ## Deployment
 
-For a quick and easy deployment using `docker-compose` consider using the [GIFM Button App][app-repo].
+For a quick and easy deployment using `docker-compose` consider using the [GIFM Button App Repo][app-repo].
 
 For _advanced use cases_, or when `docker-compose` is unavailable, the UI may be either started using `docker` directly or even manually started.
 This process is further described in the [Deployment Guide][deployment-guide].
@@ -23,9 +23,9 @@ This process is further described in the [Deployment Guide][deployment-guide].
 - [Contributors Documentation][contribute-guide]
 - [Deployment Documentation][deployment-guide]
 
-Please feel free to file any issues concerning GIFM Button UI to the issues section of the repository.
+Please feel free to file any issues concerning *GIFM Button UI* to the issues section of the repository.
 
-Any questions concerning GIFM Button UI can be directed to helpdesk@library.tamu.edu.
+Any questions concerning *GIFM Button UI* can be directed to helpdesk@library.tamu.edu.
 
 Copyright © 2022 Texas A&M University Libraries under the [The MIT License][license].
 
