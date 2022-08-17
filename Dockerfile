@@ -22,7 +22,9 @@ RUN groupadd --non-unique -g $USER_ID $USER_NAME && \
 # Update the system and install dependencies (iproute2 is needed for "ip").
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt install iproute2 -y
+    apt install iproute2 -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Copy in files from outside of docker.
 COPY . $SOURCE_DIR
