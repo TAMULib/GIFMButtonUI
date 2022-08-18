@@ -1,5 +1,5 @@
 <a name="readme-top"></a>
-# Contributing to Get It For Me (GIFM) Button UI
+# Contributing to Get It For Me Button UI
 
 Though *Get It For Me (GIFM) Button UI* is developed and maintained by Texas A&M University Libraries, we welcome community contributions.
 Involvement in *GIFM Button UI* can take many forms.
