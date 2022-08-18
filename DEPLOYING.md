@@ -59,7 +59,7 @@ Those steps are a great way to start but they also fail to explain the customiza
 There are multiple ways to further configure this for deployment to better meet the desired requirements.
 
 It is highly recommended only to perform *manual installation* when developing.
-For production deployment, please use `docker-compose` via the [GIFM Button App Repo][app-repo] or use the **Docker** method above.
+For **production** deployment, please use `docker-compose` via the [GIFM Button App Repo][app-repo] or use the **Docker** method above.
 
 <div align="right">(<a href="#readme-top">back to top</a>)</div>
 
@@ -75,7 +75,9 @@ With this in mind, the deployment steps now look like:
 ```shell
 npm install
 npm run build
-dist/appConfig.js
+
+# Edit 'dist/appConfig.js' here.
+
 npm run start
 ```
 
