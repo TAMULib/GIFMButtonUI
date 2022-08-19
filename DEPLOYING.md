@@ -22,11 +22,11 @@ The **development** deployment can also use `docker-compose` in the same way.
 To manually use `docker` rather than `docker-compose`, run the following:
 
 ```shell
-docker image build -t project .
-docker run -it project
+docker image build -t gifmui .
+docker run -it gifmui
 ```
 
-<sub>_* Note: `-t project` and `-it project` may be changed to another tag name as desired, such as `-t developing_on_this` and `-it developing_on_this`._</sub><br>
+<sub>_* Note: `-t gifmui` and `-it gifmui` may be changed to another tag name as desired, such as `-t developing_on_this` and `-it developing_on_this`._</sub><br>
 <sub>_** Note: An additional step may be required, such as deploying alongside a [Weaver UI Core][weaver-ui] instance using [Verdaccio][verdaccio]._</sub>
 
 To deploy alongside a [Weaver UI Core][weaver-ui] instance using [Verdaccio][verdaccio], do the following *before* deploying:
