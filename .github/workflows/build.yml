@@ -7,34 +7,52 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: "Checkout Repository"
+        uses: actions/checkout@v3
+        with:
+          path: repo
+
+      - name: "Checkout Weaver-UI-Core"
+        uses: actions/checkout@v3
+        with:
+          repository: TAMULib/Weaver-UI-Core
+          path: weaver-ui
+          ref: 2.x
+
+      - name: "Run Weaver-UI-Core Docker Compose Registry Image"
+        run: docker-compose -f $GITHUB_WORKSPACE/weaver-ui/docker-compose.yml up -d registry
+
+      - name: "Publish Weaver-UI-Core (@wvr/core)"
+        run: |
+          cd $GITHUB_WORKSPACE/weaver-ui
+          npm run publish:local
+
+      - name: "Install Chrome Drivers"
+        run: sudo apt-get install xvfb
 
       - name: "Node Cache"
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-cache-node-${{ hashFiles('**/package.json', '**/package-lock.json') }}
 
       - name: "Node Modules Cache"
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
-          path: node_modules
+          path: $GITHUB_WORKSPACE/repo/node_modules
           key: ${{ runner.os }}-cache-node_modules-${{ hashFiles('**/package.json', '**/package-lock.json') }}
 
       - name: "Setup Node"
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 10
+          node-version: 16
 
       - name: "Install Node"
-        run: npm install
+        run: |
+          cd $GITHUB_WORKSPACE/repo
+          npm install --registry=http://localhost:4873
 
-      - name: "Node Tests"
-        run: npm run test-ci
-
-      - name: "Coverage Report"
-        uses: MikeEdgar/github-action@raw_coverage_file
-        with:
-          github-token: ${{ secrets.github_token }}
-          path-to-file: './coverage/coveralls.json'
-          coverage-format: raw
+      - name: "Run Node Tests"
+        run: |
+          cd $GITHUB_WORKSPACE/repo
+          xvfb-run --auto-servernum npm run test:ci

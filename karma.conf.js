@@ -1,101 +1,91 @@
-module.exports = function(config){
-    config.set({
+module.exports = function (config) {
+  config.set({
 
-        preprocessors: {
-            "app/!(node_modules)/**/*.js": "coverage",
-            '**/*.html': ['ng-html2js']
-        },
+    preprocessors: {
+      'app/**/*.js': 'coverage',
+      'app/**/*.html': ['ng-html2js'],
+    },
 
-        reporters: ["progress", "coverage"],
+    reporters: ['progress', 'coverage', 'coveralls'],
 
-        basePath : './',
+    basePath: './',
 
-        files : [
+    files: [
+      'dist/appConfig.js',
+      'app/config/apiMapping.js',
 
-            'app/config/appConfig_sample.js',
-            'app/config/apiMapping.js',
+      'node_modules/jquery/dist/jquery.js',
+      'node_modules/bootstrap/dist/js/bootstrap.js',
+      'node_modules/sockjs-client/dist/sockjs.js',
+      'node_modules/stompjs/lib/stomp.js',
+      'node_modules/angular/angular.js',
+      'node_modules/angular-sanitize/angular-sanitize.js',
+      'node_modules/angular-route/angular-route.js',
+      'node_modules/angular-loader/angular-loader.js',
+      'node_modules/angular-messages/angular-messages.js',
+      'node_modules/angular-mocks/angular-mocks.js',
+      'node_modules/ng-file-upload/dist/ng-file-upload-shim.js',
+      'node_modules/ng-file-upload/dist/ng-file-upload.js',
+      'node_modules/ng-table/bundles/ng-table.js',
+      'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
+      'node_modules/jasmine-promise-matchers/dist/jasmine-promise-matchers.js',
 
-            'app/node_modules/jquery/dist/jquery.js',
-            'node_modules/bootstrap/dist/js/bootstrap.min.js',
+      'node_modules/@wvr/core/app/config/coreConfig.js',
+      'node_modules/@wvr/core/app/components/**/*.js',
+      'node_modules/@wvr/core/app/core.js',
+      'node_modules/@wvr/core/app/**/*.js',
 
-            'node_modules/sockjs-client/dist/sockjs.min.js',
-            'node_modules/stompjs/lib/stomp.min.js',
+      'tests/testSetup.js',
 
-            'app/node_modules/angular/angular.js',
+      'app/app.js',
+      'app/config/runTime.js',
+      'app/components/**/*.js',
+      'app/constants/**/*.js',
+      'app/controllers/**/*.js',
+      'app/directives/**/*.js',
+      'app/filters/**/*.js',
+      'app/model/**/*.js',
+      'app/repo/**/*.js',
+      'app/services/**/*.js',
+      'app/**/*.html',
 
-            'node_modules/angular-route/angular-route.min.js',
-            'node_modules/angular-loader/angular-loader.min.js',
-            'node_modules/angular-sanitize/angular-sanitize.min.js',
-            'node_modules/angular-messages/angular-messages.min.js',
-            'node_modules/angular-mocks/angular-mocks.js',
+      'tests/core/**/*.js',
+      'tests/mock/**/mock*.js',
+      'tests/unit/**/*Test.js',
+    ],
 
-            'app/node_modules/ng-table/bundles/ng-table.min.js',
+    autoWatch: true,
 
-            'node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js',
-            'node_modules/ng-file-upload/dist/ng-file-upload.min.js',
+    failOnEmptyTestSuite: false,
 
-            'node_modules/ng-table/bundles/ng-table.min.js',
+    frameworks: ['jasmine'],
 
-            'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
+    browsers: ['ChromeHeadless'],
 
-            'app/node_modules/@wvr/core/app/config/coreConfig.js',
+    plugins: [
+      'karma-chrome-launcher',
+      'karma-coverage',
+      'karma-coveralls',
+      'karma-firefox-launcher',
+      'karma-jasmine',
+      'karma-junit-reporter',
+      'karma-ng-html2js-preprocessor',
+    ],
 
-            'app/node_modules/@wvr/core/app/components/**/*.js',
+    junitReporter: {
+      outputFile: 'test_out/unit.xml',
+      suite: 'unit',
+    },
 
-            'app/node_modules/@wvr/core/app/core.js',
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'app/',
+      moduleName: 'templates',
+    },
 
-            'app/node_modules/@wvr/core/app/**/*.js',
+    coverageReporter: {
+      type: 'lcov',
+      dir: 'coverage/',
+    }
 
-
-            'app/components/**/*.js',
-
-            'tests/testSetup.js',
-
-            'app/app.js',
-
-            'app/config/runTime.js',
-
-            'app/controllers/**/*.js',
-
-            'app/model/**/*.js',
-
-            'tests/mocks/**/*.js',
-
-            'tests/unit/**/*.js'
-
-        ],
-
-        autoWatch : true,
-
-        frameworks: ['jasmine'],
-
-        browsers: ["Chrome", "ChromeHeadless", "ChromeHeadlessNoSandbox", "Firefox"],
-
-        customLaunchers: {
-            ChromeHeadlessNoSandbox: {
-                base: "ChromeHeadless",
-                flags: ["--no-sandbox"]
-            }
-        },
-
-        plugins : [
-            'karma-chrome-launcher',
-            "karma-coverage",
-            'karma-firefox-launcher',
-            'karma-jasmine',
-            'karma-junit-reporter',
-            'karma-ng-html2js-preprocessor'
-            ],
-
-        junitReporter : {
-            outputFile: 'test_out/unit.xml',
-            suite: 'unit'
-        },
-
-        coverageReporter: {
-            type: "lcov",
-            dir: "coverage/"
-        }
-
-    });
+  });
 };
