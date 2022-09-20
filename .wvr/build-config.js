@@ -62,8 +62,12 @@ const config = {
       to: './resources/styles/html5-boilerplate/dist/css/normalize.css',
     },
     {
-      from: './node_modules/bootstrap/dist/css/bootstrap.css',
-      to: './resources/styles/bootstrap/dist/css/bootstrap.css',
+      from: './node_modules/bootstrap/dist/css/bootstrap.min.css',
+      to: './resources/styles/bootstrap/dist/css/bootstrap.min.css',
+    },
+    {
+      from: './node_modules/bootstrap/dist/css/bootstrap.min.css.map',
+      to: './resources/styles/bootstrap/dist/css/bootstrap.min.css.map',
     },
   ],
   entry: {
