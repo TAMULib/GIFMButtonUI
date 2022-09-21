@@ -53,6 +53,8 @@ jobs:
           npm install --registry=http://localhost:4873
 
       - name: "Run Node Tests"
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN  }}
         run: |
           cd $GITHUB_WORKSPACE/repo
           xvfb-run --auto-servernum npm run test:ci
