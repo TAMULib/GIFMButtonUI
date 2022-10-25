@@ -6,6 +6,14 @@ $linkColor: #337ab7;
 @import "node_modules/@wvr/core/app/resources/styles/sass/main";
 @import "node_modules/@wvr/core/app/resources/styles/sass/theme-base";
 
+html {
+  font-size: 1rem;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
 main {
   display: block;
   height: auto;
