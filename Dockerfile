@@ -66,7 +66,7 @@ ENV BASE_PATH /get-it
 
 ENV GOOGLE_ANALYTICS UA-XXXXX-X
 
-ENV AUTH_SERVICE_URL https://labs.library.tamu.edu/authfix
+ENV AUTH_SERVICE_URL https://labs.library.tamu.edu/auth/2x
 ENV WEB_SERVICE_URL http://localhost:9000
 ENV COMPONENTS_URL https://labs.library.tamu.edu/tl-components/2x
 
