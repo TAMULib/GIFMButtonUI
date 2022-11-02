@@ -6,7 +6,7 @@ ARG NPM_REGISTRY=upstream
 ARG NODE_ENV=development
 
 # Node stage.
-FROM node:lts-slim as build
+FROM node:16-slim as build
 ARG USER_ID
 ARG USER_NAME
 ARG SOURCE_DIR
