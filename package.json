@@ -24,7 +24,7 @@
     "start": "wvr server --port 8080"
   },
   "dependencies": {
-    "@wvr/core": "2.2.2-rc.13",
+    "@wvr/core": "2.2.2-rc.14",
     "ng-file-upload": "12.2.13",
     "ng-table": "3.0.1",
     "webdriver-manager": "^12.1.8"
@@ -32,6 +32,8 @@
   "devDependencies": {
   },
   "overrides": {
-    "glob-stream": "^7.0.0"
+    "glob-stream": "^7.0.0",
+    "minimatch": "^3.1.2",
+    "qs": "^6.11.0"
   }
 }
